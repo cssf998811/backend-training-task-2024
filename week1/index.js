@@ -51,14 +51,14 @@ console.log(`Alex 買完課程了，他總共買了 ${totalClasses} 堂課`);
 // ### 題目四：線稿圖截圖，看圖宣告變數
 // 請參考資料夾內 q4.webp 圖片
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
-packageName = '14堂組合包方案';
-packagePrice = 2520;
-packageSession = 14;
+let packageName = '14堂組合包方案';
+let packagePrice = 2520;
+let packageSession = 14;
 
 // ### 題目五：布林值與變數定義，看是否有用對 const, let
 // 情境：Alex 在往健身房的路上，望向城市的風景，請描述她看到的一切，並宣告變數與賦予值
 // 4-1. Alex 在等紅綠燈，他抬頭看一下現在是紅燈，還有 28 秒綠燈（最多 3 個宣告）
-const isTrafficLightWorking = true;
+let isTrafficLightWorking = true;
 let trafficLightStatus = 'red';
 let trafficLightRemainTime = 28;
 // 4-2. 目前一起等待的機車有 8 台
@@ -94,9 +94,11 @@ console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 let totalBill = 0;
 const machineUsePrice = 50;
 const groupClassesPrice = 150;
-machineUsePriceTotal = machineUsePrice * 3;
-groupClassesTotal = groupClassesPrice * 2;
-totalBill = machineUsePriceTotal + groupClassesTotal
+let machineUseHour = 3;
+let attendedGroupClasses = 2;
+let machineUsePriceTotal = machineUsePrice * machineUseHour;
+let groupClassesTotal = groupClassesPrice * attendedGroupClasses;
+totalBill = machineUsePriceTotal + groupClassesTotal;
 
 console.log(
   `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${totalBill}元`
