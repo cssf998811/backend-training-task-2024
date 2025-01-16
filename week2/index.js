@@ -120,8 +120,9 @@ if (playerA === playerB) {
 
 // 練習：使用物件變數定義兩位教練的資訊
 const gym = {
-  "location": "高雄市",
   "name" : "高雄市健身教練聯盟",
+  "location": "高雄市",
+  "description": "專注於提供高品質的健身指導服務。", 
   "coach": {
     // 王教練的資訊
     "coachWang": {
