@@ -73,7 +73,7 @@ let baseBonus = 6000; // 基本獎金
 let coachBonus = baseBonus; // 教練業績獎金帳單，並已加入條件一基本獎金
 
 // 練習：計算教練業績獎金
-if (coachIncome < 100000) {
+if (coachIncome <= 100000) {
   coachBonus += coachIncome * 0.1
 } else if(coachIncome <= 300000){
   coachBonus += coachIncome * 0.15
@@ -90,7 +90,7 @@ console.log(`小明總共需支付 ${coachBonus} 獎金`);
 // 練習：使用 if, else if, else 判斷輸贏
 let playerA = '剪刀';
 let playerB = '剪刀';
-if (playerA === '剪刀' && playerB === '剪刀' || playerA === '石頭' && playerB === '石頭' || playerA === '布' && playerB === '布') {
+if (playerA === playerB) {
   console.log('平手');
 } else if(playerA === '剪刀' && playerB === '布' || playerA === '石頭' && playerB === '剪刀' || playerA === '布' && playerB === '石頭'){
   console.log('playerA贏');
@@ -119,48 +119,52 @@ if (playerA === '剪刀' && playerB === '剪刀' || playerA === '石頭' && play
 */
 
 // 練習：使用物件變數定義兩位教練的資訊
-const gymCoach = {
-  // 王教練的資訊
-  "coachWang": {
-    "skill": [
-      "Strength Training",
-      "Weight Loss Classes"
-    ],
-    "classes": {
-      "personalTrain": {
-        "price": 2000,
-        "duration": 60,
-        "available": true
-      },
-      "groupTrain": {
-        "price": 1500,
-        "duration": 90,
-        "available": false
-      }
+const gym = {
+  "location": "高雄市",
+  "name" : "高雄市健身教練聯盟",
+  "coach": {
+    // 王教練的資訊
+    "coachWang": {
+        "skill": [
+        "Strength Training",
+        "Weight Loss Classes"
+        ],
+        "classes": {
+        "personalTrain": {
+            "price": 2000,
+            "duration": 60,
+            "available": true
+        },
+        "groupTrain": {
+            "price": 1500,
+            "duration": 90,
+            "available": false
+        }
+        },
+        "background": "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
+        "acceptNewStudent": true
     },
-    "background": "王教練擁有 5 年教學經驗，專精於提升學員的肌力與減脂，適合希望快速達成體能目標的學員。",
-    "acceptNewStudent": true
-  },
-  // 李教練的資訊
-  "coachLi": {
-    "skill": [
-      "Yoga",
-      "Body Sculpture"
-    ],
-    "classes": {
-      "personalTrain": {
-        "price": 1800,
-        "duration": 50,
-        "available": false
-      },
-      "groupTrain": {
-        "price": 1200,
-        "duration": 75,
-        "available": true
-      }
-    },
-    "background": "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
-    "acceptNewStudent": false
+    // 李教練的資訊
+    "coachLi": {
+        "skill": [
+        "Yoga",
+        "Body Sculpture"
+        ],
+        "classes": {
+        "personalTrain": {
+            "price": 1800,
+            "duration": 50,
+            "available": false
+        },
+        "groupTrain": {
+            "price": 1200,
+            "duration": 75,
+            "available": true
+        }
+        },
+        "background": "李教練是一位瑜伽大師，擁有 10 年教學經驗，擅長幫助學員雕塑完美體態，適合希望改善姿態與柔軟度的學員。",
+        "acceptNewStudent": false
+    }
   }
 };
 console.log(gymCoach);
