@@ -33,7 +33,7 @@ const members = ["Alice", "Bob", "Charlie", "Diana", "Evan", "Fiona", "George", 
 let purchaseRecords = [];
 function addPurchaseRecord(name, courses){
     let unitPrice = 0;
-    if(name == undefined || name == "" || !members.includes(name) || typeof(courses) !== "number" || courses < 1 || Number.isInteger(courses)){
+    if(name == undefined || name == "" || !members.includes(name) || typeof(courses) !== "number" || courses < 1){
         console.log("輸入錯誤，請輸入有效的會員名稱和課程數量。");
         return;
     }
@@ -77,13 +77,12 @@ function calculateTotalPrice(purchaseRecords){
 // 印出 console.log 文字為 未購買課程的會員有：.......
 
 function filterNoPurchaseMember(purchaseRecords){
-    // 深拷貝
-    let noPurchaseMember = JSON.parse(JSON.stringify(members));
+    const purchaseMember = [];
     purchaseRecords.forEach(record => {
-        index = noPurchaseMember.indexOf(record.name);
-        noPurchaseMember.splice(index, 1);
+        purchaseMember.push(record.name);
     });
-    console.log("未購買課程的會員有：" + noPurchaseMember);
+    console.log(purchaseMember);
+    // console.log("未購買課程的會員有：" + noPurchaseMember);
 }
 
 // Test Data
