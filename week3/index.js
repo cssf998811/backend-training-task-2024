@@ -77,12 +77,13 @@ function calculateTotalPrice(purchaseRecords){
 // 印出 console.log 文字為 未購買課程的會員有：.......
 
 function filterNoPurchaseMember(purchaseRecords){
-    const purchaseMember = [];
+    // 深拷貝
+    let noPurchaseMember = JSON.parse(JSON.stringify(members));
     purchaseRecords.forEach(record => {
-        purchaseMember.push(record.name);
+        index = noPurchaseMember.indexOf(record.name);
+        noPurchaseMember.splice(index, 1);
     });
-    console.log(purchaseMember);
-    // console.log("未購買課程的會員有：" + noPurchaseMember);
+    console.log("未購買課程的會員有：" + noPurchaseMember);
 }
 
 // Test Data
