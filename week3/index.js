@@ -33,7 +33,7 @@ const members = ["Alice", "Bob", "Charlie", "Diana", "Evan", "Fiona", "George", 
 let purchaseRecords = [];
 function addPurchaseRecord(name, courses){
     let unitPrice = 0;
-    if(name == undefined || name == "" || !members.includes(name) || typeof(courses) !== "number" || courses < 1){
+    if(typeof name !== 'string' || name.trim().length === 0 || !members.includes(name) || typeof(courses) !== "number" || courses < 1){
         console.log("輸入錯誤，請輸入有效的會員名稱和課程數量。");
         return;
     }
@@ -81,7 +81,9 @@ function filterNoPurchaseMember(purchaseRecords){
     let noPurchaseMember = JSON.parse(JSON.stringify(members));
     purchaseRecords.forEach(record => {
         index = noPurchaseMember.indexOf(record.name);
-        noPurchaseMember.splice(index, 1);
+        if(index !== -1){
+            noPurchaseMember.splice(index, 1);
+        }
     });
     console.log("未購買課程的會員有：" + noPurchaseMember);
 }
